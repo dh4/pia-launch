@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Check for root
-if [[ "$EUID" != 0 ]]; then 
+if [[ "$EUID" != 0 ]]; then
     echo "Please run as root"
     exit
 fi
@@ -41,12 +41,13 @@ for file in *.ovpn; do
         exit
     fi
 
-    echo "$i) $file"
+    menu[$i]="$i) ${file%.*}"$'\n'
     servers[$i]="$file"
     (( i++ ))
 done
 
 while true; do
+    echo " ${menu[@]}" | column
     read -p "Choose a server to connect to: " selection
     server=${servers[$selection]}
 
