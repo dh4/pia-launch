@@ -22,8 +22,8 @@ if [[ ! -f "$dir/resolv.conf" ]]; then
     exit
 fi
 
-if [[ ! -f "$dir/ca.crt" || ! -f "$dir/crl.pem" ]]; then
-    echo "Missing ca.crt and crl.pem file"
+if [[ ! -f "$dir/ca.rsa.2048.crt" || ! -f "$dir/crl.rsa.2048.pem" ]]; then
+    echo "Missing ca.rsa.2048.crt and crl.rsa.2048.pem file"
     exit
 fi
 
