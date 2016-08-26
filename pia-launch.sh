@@ -17,6 +17,12 @@ else
     exit
 fi
 
+#check if /var/run/vpn dir exists
+if [[ ! -d "/var/run/vpn" ]]; then
+    echo "/var/run/vpn dose not exists"
+    mkdir -p /var/run/vpn/
+fi
+
 if [[ ! -f "$dir/resolv.conf" ]]; then
     echo "Missing resolv.conf file"
     exit
