@@ -19,7 +19,7 @@ fi
 
 #check if /var/run/vpn dir exists
 if [[ ! -d "/var/run/vpn" ]]; then
-    echo "/var/run/vpn dose not exists"
+    echo "/var/run/vpn dose not exists creating it"
     mkdir -p /var/run/vpn/
 fi
 
