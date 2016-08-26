@@ -6,7 +6,6 @@ if [[ "$EUID" != 0 ]]; then
     exit
 fi
 
-
 # Check for required files/directories
 dir="/etc/openvpn/privateinternetaccess/"
 
@@ -15,6 +14,12 @@ if [[ -d $dir ]]; then
 else
     echo "$dir does not exist"
     exit
+fi
+
+#check if /var/run/vpn dir exists
+if [[ ! -d "/var/run/vpn" ]]; then
+    echo "/var/run/vpn dose not exists creating it"
+    mkdir -p /var/run/vpn/
 fi
 
 if [[ ! -f "$dir/resolv.conf" ]]; then
