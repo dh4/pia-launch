@@ -6,7 +6,6 @@ if [[ "$EUID" != 0 ]]; then
     exit
 fi
 
-
 # Check for required files/directories
 dir="/etc/openvpn/privateinternetaccess/"
 
